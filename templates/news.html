@@ -1,0 +1,40 @@
+<!-- templates/news.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <header class="news-header mb-4">
+        <h1>Recent News</h1>
+    </header>
+    <main class="news-content">
+        <div class="row">
+            {% for article in articles %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        {# Determine the source of the article based on available fields #}
+                        {% if article.webUrl %}
+                            <!-- The Guardian -->
+                            {% set image_url = article.fields.thumbnail if article.fields else None %}
+                            <h5 class="card-header">{{ article.sectionName }}</h5>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{{ article.webUrl }}" target="_blank">{{ article.webTitle }}</a></h5>
+                                <p class="card-text">{{ article.webPublicationDate }}</p>
+                            </div>
+                        {% elif article.web_url %}
+                            <!-- The New York Times -->
+                            {% set image_url = article.multimedia[0].url if article.multimedia else None %}
+                            <h5 class="card-header">{{ article.section_name }}</h5>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{{ article.web_url }}" target="_blank">{{ article.headline.main }}</a></h5>
+                                <p class="card-text">{{ article.pub_date }}</p>
+                            </div>
+                        {% endif %}
+                        {% if image_url %}
+                            <img src="{{ image_url }}" class="card-img-top" alt="Article Image">
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
