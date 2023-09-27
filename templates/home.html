@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campaign Website</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Campaign Website</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    
 <body>
 
     <nav>
@@ -14,18 +16,83 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <header>
-        <h1>Welcome to Our Campaign Site</h1>
-    </header>
 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="2000">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to our Campaign</h5>
+                </div>
+                <img alt="First slide" class="d-block w-100" src="{{ url_for('static', filename='img/Caraselimg_1.jpg') }}"/>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to our Campaign</h5>
+                </div>
+                <img class="d-block w-100" src="{{ url_for('static', filename='img/caraselimg_2.jpg') }}" alt="Second slide">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to our Campaign</h5>
+                </div>
+                <img class="d-block w-100" src="{{ url_for('static', filename='img/caraselimg_3.jpg') }}" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    <main class="video-section">
+        <header>
+            <h2>"Safeguarding Liberty, Securing Prosperity: Together, We Thrive!"</h2>
+        </header>
+            <!-- Paste the copied iframe code below -->
+            <iframe width="860" height="515" src="https://www.youtube.com/embed/qUxdGGoamAU?si=J8jaiTxWeK_pYqt8&amp;start=138" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </main>
+    
     <main class="container">
         <div class="left">
-            <img src="{{ url_for('static', filename='images/campaign.jpg') }}" alt="Campaign Image" style="width:100%;">
+            <img src="{{ url_for('static', filename='img/CandiateFace.jpg') }}" alt="Candidate Face Shot" style="width:100%;">
         </div>
         <div class="right">
-            <p>Our mission is to foster a community that works together to create a better future for all. We believe in inclusivity, sustainability, and the power of collective action.</p>
+            <h3>"Our America, Our Values, Our Future"</h3>
+            <p>
+                In these challenging times, our great nation stands at a crossroads, and the path we choose will shape the future for generations to come. I, [Candidate's Name], proudly announce my candidacy as a Republican American politician, driven by a deep commitment to preserving the values that have made our country exceptional and a determination to secure a brighter and more prosperous future for all.
+                
+                Our mission is simple yet profound: to uphold the principles upon which our nation was founded, to champion limited government, individual liberty, and economic opportunity, and to protect the American dream for every citizen.
+                
+                As Republicans, we believe in the power of individual freedom and personal responsibility. We stand for a government that serves its citizens while respecting their autonomy and rights. Our vision is one where the American people have the opportunity to succeed through hard work and determination, without excessive government intervention.</p>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>    
 
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h5>Contact Us</h5>
+                <p>Email: contact@campaign.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="sponsors">
+                <h5>Sponsors</h5>
+                <p>Sponsor 1</p>
+                <p>Sponsor 2</p>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
