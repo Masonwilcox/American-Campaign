@@ -1,0 +1,53 @@
+
+/* ... (rest of the existing CSS) ... */
+
+/* User-provided CSS */
+/* Style for the donate button */
+.donate-button {
+    position: absolute;  /* Position the donate button absolutely within the donation tracker */
+    margin-top: 20px;  /* Add some margin above the donate button */
+    padding: 10px 20px;  /* Add some padding around the donate button */
+    width: 100px;  /* Set a fixed width for the donate button to match the donation input field */
+    text-align: center;  /* Center the text on the donate button */
+    font-size: 16px;  /* Set the font size of the donate button */
+    border: none;  /* Remove the border from the donate button */
+    background-color: #008CBA;  /* Set the background color of the donate button */
+    color: #fff;  /* Set the text color of the donate button */
+    cursor: pointer;  /* Set the cursor to pointer when hovering over the donate button */
+}
+
+/* Container for the donation input and button */
+.donation-input-container {
+    position: absolute;  /* Fix the donation input container to the page */
+    left: 24%;  /* Position it 20px from the left edge of the page */
+    bottom: 65%;  /* Position it at the vertical center of the page */
+    transform: translateY(-50%);  /* Center it vertically */
+}
+
+/* Style for the donation input field */
+.donation-input {
+    width: 100px;  /* Set a fixed width for the donation input field */
+    padding: 5px;  /* Add some padding inside the donation input field */
+    margin-bottom: 10px;  /* Add some margin below the donation input field */
+    font-size: 16px;  /* Set the font size of the donation input field */
+    border: 1px solid #000;  /* Add a border around the donation input field */
+}
+
+/* Updated style for the donate button */
+.donate-button {
+    /* ... (rest of the existing CSS) ... */
+    width: 100px;  /* Set a fixed width for the donate button to match the donation input field */
+    text-align: center;  /* Center the text on the donate button */
+}
+
+/* Updated styles for the donation tracker and fill bar */
+.donation-tracker {
+    width: 10vw;  /* Set a fixed width for the donation tracker */
+    height: 30vh;  /* Set a fixed height for the donation tracker */
+    /* ... (rest of the existing CSS) ... */
+}
+
+.fill-bar {
+    /* ... (rest of the existing CSS) ... */
+    background-color: #76c7c0;  /* Update the background color of the fill bar */
+}

@@ -30,7 +30,10 @@
                             </div>
                         {% endif %}
                         {% if image_url %}
-                            <img src="{{ image_url }}" class="card-img-top" alt="Article Image">
+                        <img src="{{ image_url }}" class="card-img-top" alt="Article Image">
+                        {% else %}
+                        <!-- Display a default image if the article doesn't have an image -->
+                        <img src="{{ url_for('static', filename='default-image.jpg') }}" class="card-img-top" alt="Default Image">
                         {% endif %}
                     </div>
                 </div>

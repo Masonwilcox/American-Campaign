@@ -1,0 +1,91 @@
+
+<!-- templates/donate.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="text-center">
+            <h2>Donation Tracker</h2>
+            <p>Help Us Win Donate Today</p>
+        </div>
+
+        <div class="donation-input-container">
+            <input type="number" class="donation-input" id="donation-input" placeholder="Amount">
+            <button class="donate-button" onclick="donate()">Donate</button>
+        </div>
+        <div class="donation-tracker">
+            <div class="goal-amount text-center" id="goal-amount">
+                Goal: $0
+            </div>
+            <div class="current-amount" id="current-amount">
+                $0
+            </div>
+            <div class="fill-bar" id="fill-bar"></div>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="left">
+            <h3>Campaign Fund Deployment</h3>
+            <h4>For use to buiild a better America we need clarity and accountability</h4>
+            <h4>That is why we are commited to keeping you updated with how campign spending is being used.</h4>
+        </div>
+        <div class="right">
+            <h3>""</h3>
+            <p>
+              ...
+            </p>
+        </div>
+    </main>
+
+
+    <script type="text/javascript">
+        // Function to update the donation tracker styles and text content
+        function updateDonationTracker(total, goal) {
+            document.getElementById('goal-amount').textContent = 'Goal: $' + goal;
+            document.getElementById('current-amount').textContent = '$' + total;
+            let percentage = (total / goal) * 100;
+            document.getElementById('current-amount').style.bottom = percentage + '%';
+            document.getElementById('fill-bar').style.height = percentage + '%';
+        }
+
+        // Fetch the current donation total and goal from the server when the page loads
+        async function fetchDonationData() {
+            let response = await fetch('/donation_data');
+            if (response.ok) {
+                let data = await response.json();
+                updateDonationTracker(data.total, data.goal);
+            } else {
+                console.error('Failed to fetch donation data:', response.statusText);
+            }
+        }
+
+        // Call fetchDonationData when the page loads
+        window.onload = fetchDonationData;
+
+        // Function to handle donations
+        async function donate() {
+        let amount = document.getElementById('donation-input').value;
+            if (amount) {
+                let response = await fetch('/process_donation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'amount=' + encodeURIComponent(amount)
+                });
+                let result = await response.json();
+                if (result.success) {
+                    alert(result.message);
+                    // Fetch the updated donation data and update the donation tracker
+                    fetchDonationData();
+                } else {
+                    alert(result.message);
+                    alert('Please enter a donation amount.');
+                }
+            }
+        }
+    </script>
+{% endblock %}

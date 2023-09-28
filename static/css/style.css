@@ -68,7 +68,7 @@ header, main {
 }
 
 header {
-    background-color: var(--CampaignRed);
+    background-color: var(--purple);
     color: white;
 }
 
@@ -127,3 +127,71 @@ footer {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+/* Container for the donation tracker */
+.donation-tracker {
+    left: 10%;
+    width: 10vw;  /* Set a fixed width for the donation tracker */
+    height: 50vh;  /* Set a fixed height for the donation tracker */
+    position: relative;  /* Set position to relative to allow absolute positioning of child elements */
+    border: 1px solid #000;  /* Add a border around the donation tracker */
+    margin: 0 auto;  /* Center the donation tracker horizontally */
+}
+
+/* Style for the goal amount text */
+.goal-amount {
+    position: absolute;  /* Position the goal amount text absolutely within the donation tracker */
+    top: 0;  /* Position at the top of the donation tracker */
+    width: 100%;  /* Set the width to 100% to center the text */
+    text-align: center;  /* Center the text */
+}
+
+/* Style for the current amount text */
+.current-amount {
+    position: absolute;  /* Position the current amount text absolutely within the donation tracker */
+    width: 100%;  /* Set the width to 100% to center the text */
+    text-align: center;  /* Center the text */
+}
+
+/* Style for the fill bar */
+.fill-bar {
+    position: absolute;  /* Position the fill bar absolutely within the donation tracker */
+    bottom: 0;  /* Position the fill bar at the bottom of the donation tracker */
+    width: 100%;  /* Set the width to 100% to fill the width of the donation tracker */
+    background-color: #76c7c0;  /* Update the background color of the fill bar */
+}
+
+/* Adjusted Container for the donation input and button */
+.donation-input-container {
+    position: absolute;  /* Fix the donation input container to the page */
+    left: 5%;  /* Position it towards the left side of the screen */
+    top: 45%;  /* Position it at the vertical center of the page */
+    transform: translateY(-50%);  /* Center it vertically */
+    width: 30vw;  /* Set a width for the container */
+}
+
+/* Adjusted style for the donation input field */
+.donation-input-container .donation-input{
+    width: 100%;  /* Set a width of 100% to fill the container */
+    padding: 10px;  /* Increase padding inside the donation input field */
+    margin-bottom: 40px;  /* Add some margin below the donation input field */
+    font-size: 18px;  /* Increase the font size of the donation input field */
+    border: 1px solid #000;  /* Add a border around the donation input field */
+    box-sizing: border-box;  /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Adjusted style for the donate button */
+.donation-input-container .donate-button {
+    width: 100%;  /* Set a width of 100% to fill the container */
+    padding: 20px;  /* Increase padding around the donate button */
+    font-size: 18px;  /* Increase the font size of the donate button */
+    border: none;  /* Remove the border from the donate button */
+    background-color: #008CBA;  /* Set the background color of the donate button */
+    color: #fff;  /* Set the text color of the donate button */
+    cursor: pointer;  /* Set the cursor to pointer when hovering over the donate button */
+    text-align: center;  /* Center the text on the donate button */
+    box-sizing: border-box;  /* Ensure padding and border are included in the element's total width and height */
+}
+
+
+

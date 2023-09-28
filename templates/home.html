@@ -1,9 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <header class="campaign-header">
         <title>Campaign Website</title>
-    </header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -11,19 +9,19 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="2000">
+            <div class="carousel-item active" data-interval="1000">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Welcome to our Campaign</h5>
                 </div>
                 <img alt="First slide" class="d-block w-100" src="{{ url_for('static', filename='img/Caraselimg_1.jpg') }}"/>
             </div>
-            <div class="carousel-item" data-interval="2000">
+            <div class="carousel-item" data-interval="1000">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Welcome to our Campaign</h5>
                 </div>
                 <img class="d-block w-100" src="{{ url_for('static', filename='img/caraselimg_2.jpg') }}" alt="Second slide">
             </div>
-            <div class="carousel-item" data-interval="2000">
+            <div class="carousel-item" data-interval="1000">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Welcome to our Campaign</h5>
                 </div>
