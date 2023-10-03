@@ -9,10 +9,21 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+# District and Race Page
+@app.route('/DR')
+def DR():
+    return render_template('DR.html')
+
 # Campaign Page
 @app.route('/campaign')
 def campaign():
     return render_template('campaign.html')
+
+# Campaign Page
+@app.route('/mission')
+def mission():
+    return render_template('mission.html')
+
 
 # Get Involved
 @app.route('/get_involved')
@@ -92,7 +103,7 @@ def fetch_nyt_articles(query):
 
 @app.route('/news')
 def news():
-    query = 'Barack Obama'
+    query = 'Christine Drazan Senator'
     guardian_articles = fetch_guardian_articles(query)
     nyt_articles = fetch_nyt_articles(query)
     # Combine the articles from both sources
@@ -123,4 +134,4 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)

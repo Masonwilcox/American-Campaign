@@ -14,18 +14,21 @@
 <body>
     <nav>
         <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">Bio</a>
+        <a href="{{ url_for('DR') }}">District and Race</a>
         <a href="{{ url_for('campaign') }}">Campaign</a>
-        <a href="{{ url_for('media') }}">Media</a>
+        <!--<a href="{{ url_for('media') }}">Media</a>
         <a href="{{ url_for('events') }}">Events Us</a>
         <a href="{{ url_for('get_involved') }}">Get Involved</a>
         <a href="{{ url_for('news') }}">News</a>
         <a href="{{ url_for('donate') }}">Donate</a>
         <a href="{{ url_for('faqs') }}">FAQs</a>
         <a href="{{ url_for('about') }}">About Us</a>
-        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('contact') }}">Contact</a>-->
     </nav>
     {% block content %}{% endblock %}
     <footer>
+        <p>&copy; 2023 Ron DeSantis for Governor</p>
         <div class="footer-content">
             <div class="contact-info">
                 <h5>Contact Us</h5>
